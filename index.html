@@ -11,6 +11,18 @@
 			display: border-box;
 		}
 
+		@media (max-width: 425px) {
+			html {
+				font-size: 0.5rem;
+			}
+		}
+
+		@media (min-width: 425px) and (max-width: 768px) {
+			html {
+				font-size: 0.75rem;
+			}
+		}
+
 		html,
 		body,
 		canvas {
@@ -43,7 +55,6 @@
 			background-color: #aa2222;
 			padding: 2rem;
 			cursor: pointer;
-
 			border: none;
 			border-radius: 1rem;
 			border-bottom-width: 0.5rem;

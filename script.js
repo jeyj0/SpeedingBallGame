@@ -14,8 +14,12 @@ import Area from "./classes/Area.js";
     $gameOverButton = document.getElementById("gameOverButton"),
     $grey = document.getElementById("grey");
   let $isMouseDown = false;
+
   $canvasElement.addEventListener("mousedown", () => ($isMouseDown = true));
+  $canvasElement.addEventListener("touchstart", () => ($isMouseDown = true));
   $canvasElement.addEventListener("mouseup", () => ($isMouseDown = false));
+  $canvasElement.addEventListener("touchend", () => ($isMouseDown = false));
+
   const $canvas = new Canvas($canvasElement, false),
     $ballFromBottom = 0.7,
     $accelerationFactor = $accelerationUp;
@@ -122,8 +126,8 @@ import Area from "./classes/Area.js";
     $startButton.style.display = "block";
   };
 
-  $startButton.addEventListener("click", () => startGame());
-  $gameOverButton.addEventListener("click", () => startGame());
+  $startButton.addEventListener("mouseup", () => startGame());
+  $gameOverButton.addEventListener("mouseup", () => startGame());
 
   mainMenu();
 })();
